@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Bank poll
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item text-wrap>
+        Hola, Carlos. Desde DummyBank queremos saber qué le pareció su experiencia en la sucursal Some Location.
+        </ion-item>
+        <ion-label>¿Cómo considera la atención recibida?</ion-label>
+        <ion-list radio-group [(ngModel)]="answers.atencion">
+            <ion-item>
+              <ion-label>Mala</ion-label>
+              <ion-radio value="mala"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Regular</ion-label>
+              <ion-radio value="regular"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Buena</ion-label>
+              <ion-radio value="buena" checked></ion-radio>
+            </ion-item>
+          </ion-list>
+      
+        <ion-label>¿El operador logró resolver su inconveniente?</ion-label>
+        <ion-list radio-group [(ngModel)]="answers.inconveniente">
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio value="no"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Sí</ion-label>
+              <ion-radio value="si" checked></ion-radio>
+            </ion-item>
+          </ion-list>
+          <ion-label>Comentarios adicionales</ion-label>
+          <ion-item>
+            <ion-textarea [(ngModel)]="answers.comentario" placeholder="Escriba su comentaro aquí..." clearInput rows="4" maxLength="140"></ion-textarea>
+          </ion-item>
+          <button ion-button (click)="submit()" block>Enviar respuesta</button>
+</ion-content>-
